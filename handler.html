@@ -5,30 +5,32 @@
         <script src="p5.min.js"></script>
     </head>
     <body style="padding: 0;margin: 0;overflow: hidden;">
-        <script src="elements.js"></script>
-        <script src="render.js"></script>
-        <script src="setup.js"></script>
+        <script type="text/javascript" src="matrix.js"></script>
+        <script type="text/javascript" src="vec.js"></script>
+        <script type="text/javascript" src="set.js"></script>
+        <script type="text/javascript" src="line.js"></script>
+        <script type="text/javascript" src="force.js"></script>
+        <script type="text/javascript" src="lss.js"></script>
+        <script type="text/javascript" src="solver.js"></script>
+        <script type="text/javascript" src="render_func.js"></script>
+        <script type="text/javascript" src="setup.js"></script>
         <div id='ctrl'>
 
             <button onclick="reset()" style="display: inline-block;width: 200px">Reset</button><br><br>
 
-            <i>FPS: </i><i id='FPS'>0</i><br><br>
+            <i>FPS: </i><i id='FPS'>0</i>
 
-            <i>Fx:</i><input type="int" id="force1" value='10' style="width: 165px;">
-            <i>Fy:</i><input type="int" id="force2" value='10' style="width: 165px;">
+            <br><br><i>F1:</i>
+            <i><b>x<b>:</i><input type="int" id="f1x" value='0' style="width: 145px;">
+            <i style="margin-left: 28px;"><b>y<b>:</i><input type="int" id="f1y" value='0' style="width: 145px;">
+            <br><br><i>F1:</i>
+            <i><b>x<b>:</i><input type="int" id="f2x" value='0' style="width: 145px;">
+            <i style="margin-left: 28px;"><b>y<b>:</i><input type="int" id="f2y" value='0' style="width: 145px;">
+            <br><br><i>F1:</i>
+            <i><b>x<b>:</i><input type="int" id="f3x" value='0' style="width: 145px;">
+            <i style="margin-left: 28px;"><b>y<b>:</i><input type="int" id="f3y" value='0' style="width: 145px;">
+            <br><br>
             <button onclick="applyForce()" style="display: inline-block;width: 200px">apply</button>
-
-            <!-- <i>F1:</i>
-            <input type="int" id="force1" value='10' style="width: 100px;">
-            <button onclick="applyForce(1)" style="display: inline-block;width: 50px">apply</button>
-            
-            <i>F2:</i>
-            <input type="int" id="force2" value='10' style="width: 100px;">
-            <button onclick="applyForce(2)" style="display: inline-block;width: 50px">apply</button>
-
-            <i>F3:</i>
-            <input type="int" id="force3" value='10' style="width: 100px;">
-            <button onclick="applyForce(3)" style="display: inline-block;width: 50px">apply</button> -->
         </div>
     </body>
 </html>
