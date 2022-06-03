@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Analog</title>
+        <script src="p5.min.js"></script>
+    </head>
+    <body style="padding: 0;margin: 0;overflow: hidden;">
+        <script src="elements.js"></script>
+        <script src="render.js"></script>
+        <script src="setup.js"></script>
+        <div id='ctrl'>
+
+            <button onclick="reset()" style="display: inline-block;width: 200px">Reset</button><br><br>
+
+            <i>FPS: </i><i id='FPS'>0</i><br><br>
+
+            <i>Fx:</i><input type="int" id="force1" value='10' style="width: 165px;">
+            <i>Fy:</i><input type="int" id="force2" value='10' style="width: 165px;">
+            <button onclick="applyForce()" style="display: inline-block;width: 200px">apply</button>
+
+            <!-- <i>F1:</i>
+            <input type="int" id="force1" value='10' style="width: 100px;">
+            <button onclick="applyForce(1)" style="display: inline-block;width: 50px">apply</button>
+            
+            <i>F2:</i>
+            <input type="int" id="force2" value='10' style="width: 100px;">
+            <button onclick="applyForce(2)" style="display: inline-block;width: 50px">apply</button>
+
+            <i>F3:</i>
+            <input type="int" id="force3" value='10' style="width: 100px;">
+            <button onclick="applyForce(3)" style="display: inline-block;width: 50px">apply</button> -->
+        </div>
+    </body>
+</html>
