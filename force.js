@@ -20,4 +20,7 @@ function genForce(lineset, connectionset, normalset) {
 		lineset.set[conn[1][0]].force[0][2*conn[1][1]][2*k2+1]   -= lineset.set[conn[1][0]].cos; //N2
 		lineset.set[conn[1][0]].force[0][2*conn[1][1]+1][2*k2+1] -= lineset.set[conn[1][0]].sin;
 	};
+	for (var i = 0; i < normalset.length(); i++) {
+		var conn = connectionset.set[i];
+	}
 }
