@@ -80,13 +80,15 @@ function Line(pos, len, a, lineset) {
 	this.end_acc = function(n) {
 		var m1 = [mult(this._tow[0],3*this.sin), mult(this._tow[1],3*this.sin)];
 		var m2 = [mult(this._tow[0],3*this.cos), mult(this._tow[1],3*this.cos)];
+
 		if (n==0) {
-			var ax = [sub(this._acc[0][0], m1[0]), sub(this._acc[1][0], m1[1])];
-  			var ay = [add(this._acc[0][1], m2[0]), add(this._acc[1][1], m2[1])];
+			var ax = [sub(this._acc[0][0], m1[0]), sub(this._acc[0][1], m1[1])];
+  			var ay = [add(this._acc[1][0], m2[0]), add(this._acc[1][1], m2[1])];
   		} else if (n==1) {
-			var ax = [add(this._acc[0][0], m1[0]), add(this._acc[1][0], m1[1])];
-  			var ay = [sub(this._acc[0][1], m2[0]), sub(this._acc[1][1], m2[1])];
+			var ax = [add(this._acc[0][0], m1[0]), add(this._acc[0][1], m1[1])];
+  			var ay = [sub(this._acc[1][0], m2[0]), sub(this._acc[1][1], m2[1])];
 		};
+
 		return [ax,ay];
 	};
 	this.calc = function() {
@@ -100,15 +102,15 @@ function Line(pos, len, a, lineset) {
 		var alpha = 0;
 		for (var i = 0; i < this.force[0][0].length; i++) {
 			ax += this._acc[0][0][i];
-			ay += this._acc[0][1][i];
+			ay += this._acc[1][0][i];
 			alpha += this._tow[0][i];
 		}
 		for (var i = 0; i < this.force[1][0].length; i++) {
-			ax += this._acc[1][0][i];
+			ax += this._acc[0][1][i];
 			ay += this._acc[1][1][i];
 			alpha += this._tow[1][i];
 		}
-		alpha *= 6/this.len; 
+		alpha *= 6/this.len;
 		this.pos.x += ax*t;
 		this.pos.y += ay*t;
 		this.a     -= alpha*t;
